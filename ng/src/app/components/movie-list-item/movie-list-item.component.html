@@ -1,0 +1,23 @@
+<div class="card">
+  <div class="card-image">
+      <figure class="image">
+          <img src="{{ movie.poster }}" alt="{{ movie.title }}">
+      </figure>
+  </div>
+  <div class="card-content">
+      <div class="content">
+          <p class="title">{{ movie.title }}</p>
+          <p class="subtitle">{{ movie.releaseDate | date: 'mediumDate' }}</p>
+          <p>{{ movie.plot }}</p>
+
+          <input type="text" [(ngModel)]="movie.title">
+          <button class="button is-primary" routerLink="/movies/{{ movie.id }}" (click)="select.emit(movie)">Select</button>
+
+      </div>
+  </div>
+
+  <footer class="card-footer">
+    <span class="card-footer-item">{{ views }} views</span>
+    <span class="card-footer-item">{{ likes }} likes</span>
+  </footer>
+</div>

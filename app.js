@@ -7,8 +7,8 @@ let logger = require('morgan');
 let sassMiddleware = require('node-sass-middleware');
 
 // Connecting to the database
-// import { connect } from './src/config/db'
-// connect("mongodb://localhost:27017/movies")
+import { connect } from './src/config/db'
+connect("mongodb://localhost:27017/movies")
 
 export let app = express();
 
@@ -26,7 +26,8 @@ app.use(sassMiddleware({
   indentedSyntax: false, // true = .sass and false = .scss
   sourceMap: true
 }));
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, 'public')))
+app.use(express.static(path.join(__dirname, 'ng', 'build'), {extensions: ['js'], index: false}))
 
 
 // Routing

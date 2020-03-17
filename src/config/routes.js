@@ -1,9 +1,21 @@
 import express from 'express'
-import {indexPage} from '../app/controllers/index.controller'
+import {indexPage, aboutPage, contactPage} from '../app/controllers/index.controller'
+import {allMoviesAPI, oneMovieAPI, createMovieAPI, updateMovieAPI, deleteMovieAPI} from '../app/controllers/movie.controller'
 let router = express.Router()
 
 export function configureRoutes(app){
   router.get('/', indexPage)
+  router.get('/about', aboutPage)
+  router.get('/contact', contactPage)
+
+  router.get('/movies*', indexPage)
+  
+  // Movies
+  router.get('/api/movies', allMoviesAPI)
+  router.get('/api/movies/:id', oneMovieAPI)
+  router.post('/api/movies', createMovieAPI)
+  router.put('/api/movies/:id', updateMovieAPI)
+  router.delete('/api/movies/:id', deleteMovieAPI)
 
   app.use('/', router)
 }
