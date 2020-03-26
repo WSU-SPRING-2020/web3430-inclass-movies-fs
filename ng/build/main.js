@@ -32,7 +32,7 @@ webpackEmptyAsyncContext.id = "./$$_lazy_route_resource lazy recursive";
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<nav class=\"navbar\" role=\"navigation\" aria-label=\"main navigation\">\n  <div class=\"navbar-brand\">\n    <a class=\"navbar-item\" routerLink=\"/movies\">\n      <img src=\"images/logo.svg\" alt=\"Favorite movies\" width=\"112\" height=\"28\">\n    </a>\n\n    <a role=\"button\" class=\"navbar-burger\" aria-label=\"menu\" aria-expanded=\"false\">\n      <span aria-hidden=\"true\"></span>\n      <span aria-hidden=\"true\"></span>\n      <span aria-hidden=\"true\"></span>\n    </a>\n  </div>\n</nav>\n\n<router-outlet></router-outlet>");
+/* harmony default export */ __webpack_exports__["default"] = ("<nav class=\"navbar\" role=\"navigation\" aria-label=\"main navigation\">\n  <div class=\"navbar-brand\">\n    <a class=\"navbar-item\" routerLink=\"/movies\">\n      <img src=\"images/logo.svg\" alt=\"Favorite movies\" width=\"112\" height=\"28\">\n    </a>\n\n    <a role=\"button\" class=\"navbar-burger\" aria-label=\"menu\" aria-expanded=\"false\">\n      <span aria-hidden=\"true\"></span>\n      <span aria-hidden=\"true\"></span>\n      <span aria-hidden=\"true\"></span>\n    </a>\n  </div>\n  <div class=\"navbar-end\">\n    <a *ngIf=\"signedIn\" (click)=\"signout()\" class=\"navbar-item\">Sign out</a>\n    <a *ngIf=\"notSignedIn\" routerLink=\"/register\" class=\"navbar-item\">Register</a>\n    <a *ngIf=\"notSignedIn\" routerLink=\"/signin\" class=\"navbar-item\">Sign in</a>\n  </div>\n</nav>\n\n<router-outlet></router-outlet>");
 
 /***/ }),
 
@@ -98,6 +98,32 @@ __webpack_require__.r(__webpack_exports__);
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony default export */ __webpack_exports__["default"] = ("<hr>\n<p class=\"title\">Movie reviews</p>\n<article class=\"media\" *ngFor=\"let r of movie.reviews\">\n  <figure class=\"media-left\">\n    <p class=\"image\">\n      <img src=\"http://via.placeholder.com/64.png\" alt=\"\">\n    </p>\n  </figure>\n  <div class=\"media-content\">\n    <div class=\"content\">\n      <p>\n        {{ r.comment }} <br>\n        <small>Posted at {{ r.postedAt | date: 'MMMM, dd yyyy' }}</small>\n      </p>\n    </div>\n  </div>\n</article>\n<article class=\"media\">\n  <figure class=\"media-left\">\n    <p class=\"image\">\n      <img src=\"http://via.placeholder.com/64.png\" alt=\"\">\n    </p>\n  </figure>\n  <div class=\"media-content\">\n    <form #f=\"ngForm\" (ngSubmit)=\"submitForm(f)\">\n      <div class=\"field\">\n        <textarea class=\"textarea\" required name=\"comment\" id=\"comment\" \n                  #c=\"ngModel\" [(ngModel)]=\"comment\"></textarea>\n\n        <p class=\"help is-danger\" *ngIf=\"f.submitted && c.invalid\">\n          Comment is required.\n        </p>\n      </div>\n      <div class=\"field\">\n        <p class=\"control\">\n          <button class=\"button is-primary\">Post review</button>\n          <button class=\"button\" type=\"reset\">Cancel</button>\n        </p>\n      </div>\n    </form>\n  </div>\n</article>");
+
+/***/ }),
+
+/***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/components/user-register/user-register.component.html":
+/*!*************************************************************************************************************!*\
+  !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/components/user-register/user-register.component.html ***!
+  \*************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"container\">\n  <p class=\"title\">User registration</p>\n  <p>If you have a account please \n    <a routerLink=\"/signin\" class=\"button is-success\">signin</a>\n  </p>\n  <form #f=\"ngForm\" (ngSubmit)=\"submitForm(f)\" [formGroup]=\"userRegister\">\n    <div class=\"field\">\n      <label for=\"firstName\" class=\"label\">First name</label>\n      <div class=\"control\">\n        <input type=\"text\" class=\"input\" formControlName=\"firstName\">\n      </div>\n      <p class=\"help is-danger\" *ngIf=\"f.submitted && firstName.invalid\">\n        First name is required\n      </p>\n    </div>\n    <div class=\"field\">\n      <label for=\"lastN ame\" class=\"label\">Last name</label>\n      <div class=\"control\">\n        <input type=\"text\" class=\"input\" formControlName=\"lastName\">\n      </div>\n      <p class=\"help is-danger\" *ngIf=\"f.submitted && lastName.invalid\">\n        Last name is required\n      </p>\n    </div>\n    <div class=\"field\">\n      <label for=\"email\" class=\"label\">Email</label>\n      <div class=\"control\">\n        <input type=\"text\" class=\"input\" formControlName=\"email\">\n      </div>\n      <p class=\"help is-danger\" *ngIf=\"f.submitted && email.invalid\">\n        Email is required\n      </p>\n    </div>\n    <div class=\"field\">\n      <label for=\"username\" class=\"label\">Username</label>\n      <div class=\"control\">\n        <input type=\"text\" class=\"input\" formControlName=\"username\">\n      </div>\n      <p class=\"help is-danger\" *ngIf=\"f.submitted && username.invalid\">\n        Username is required\n      </p>\n    </div>\n    <div class=\"field\">\n      <label for=\"password\" class=\"label\">Password</label>\n      <div class=\"control\">\n        <input type=\"password\" class=\"input\" formControlName=\"password\">\n      </div>\n      <p class=\"help is-danger\" *ngIf=\"f.submitted && password.invalid\">\n        Password is required\n      </p>\n    </div>\n\n    <div class=\"field\">\n      <div class=\"control\">\n        <button class=\"button is-primary\">Submit</button>\n        <button class=\"button\" routerLink=\"/movies\">Cancel</button>\n      </div>\n    </div>\n  </form>\n</div>\n\n");
+
+/***/ }),
+
+/***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/components/user-signin/user-signin.component.html":
+/*!*********************************************************************************************************!*\
+  !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/components/user-signin/user-signin.component.html ***!
+  \*********************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"container\">\n  <p class=\"title\">User sign in</p>\n  <p>If you don't have a account please \n    <a routerLink=\"/register\" class=\"button is-success\">Register</a>\n  </p>\n  <form #f=\"ngForm\" (ngSubmit)=\"submitForm(f)\">\n    <div class=\"field\">\n      <label for=\"username\" class=\"label\">Username</label>\n      <div class=\"control\">\n        <input type=\"text\" class=\"input\" name=\"username\" id=\"username\" \n          required #username=\"ngModel\" [(ngModel)]=\"user.username\">\n      </div>\n      <p class=\"help is-danger\" *ngIf=\"f.submitted && username.invalid\">\n        Username is required\n      </p>\n    </div>\n    <div class=\"field\">\n      <label for=\"password\" class=\"label\">Password</label>\n      <div class=\"control\">\n        <input type=\"password\" class=\"input\" name=\"password\" id=\"password\" \n          required #password=\"ngModel\" [(ngModel)]=\"user.password\">\n      </div>\n      <p class=\"help is-danger\" *ngIf=\"f.submitted && password.invalid\">\n        Password is required\n      </p>\n    </div>\n\n    <div class=\"field\">\n      <div class=\"control\">\n        <button class=\"button is-primary\">Submit</button>\n        <button class=\"button\" routerLink=\"/movies\">Cancel</button>\n      </div>\n    </div>\n  </form>\n</div>\n");
 
 /***/ }),
 
@@ -355,13 +381,33 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AppComponent", function() { return AppComponent; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm2015/router.js");
+/* harmony import */ var _services_user_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./services/user.service */ "./src/app/services/user.service.ts");
+
+
 
 
 let AppComponent = class AppComponent {
-    constructor() {
+    constructor(router, userService) {
+        this.router = router;
+        this.userService = userService;
         this.title = 'TOP 10 Movies';
     }
+    get signedIn() {
+        return _services_user_service__WEBPACK_IMPORTED_MODULE_3__["UserService"].isAuthenticated();
+    }
+    get notSignedIn() {
+        return !this.signedIn;
+    }
+    signout() {
+        this.userService.signout();
+        this.router.navigate(["/movies"]);
+    }
 };
+AppComponent.ctorParameters = () => [
+    { type: _angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"] },
+    { type: _services_user_service__WEBPACK_IMPORTED_MODULE_3__["UserService"] }
+];
 AppComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
         selector: 'app-root',
@@ -400,6 +446,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_movie_detail_movie_detail_component__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./components/movie-detail/movie-detail.component */ "./src/app/components/movie-detail/movie-detail.component.ts");
 /* harmony import */ var _components_movie_form_movie_form_component__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./components/movie-form/movie-form.component */ "./src/app/components/movie-form/movie-form.component.ts");
 /* harmony import */ var _components_movie_review_movie_review_component__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./components/movie-review/movie-review.component */ "./src/app/components/movie-review/movie-review.component.ts");
+/* harmony import */ var _components_user_register_user_register_component__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./components/user-register/user-register.component */ "./src/app/components/user-register/user-register.component.ts");
+/* harmony import */ var _components_user_signin_user_signin_component__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./components/user-signin/user-signin.component */ "./src/app/components/user-signin/user-signin.component.ts");
+/* harmony import */ var _services_user_service__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ./services/user.service */ "./src/app/services/user.service.ts");
+/* harmony import */ var ngx_cookie_service__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ngx-cookie-service */ "./node_modules/ngx-cookie-service/fesm2015/ngx-cookie-service.js");
+
+
+
+
 
 
 
@@ -426,7 +480,9 @@ AppModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
             _components_movie_list_item_movie_list_item_component__WEBPACK_IMPORTED_MODULE_11__["MovieListItemComponent"],
             _components_movie_detail_movie_detail_component__WEBPACK_IMPORTED_MODULE_13__["MovieDetailComponent"],
             _components_movie_form_movie_form_component__WEBPACK_IMPORTED_MODULE_14__["MovieFormComponent"],
-            _components_movie_review_movie_review_component__WEBPACK_IMPORTED_MODULE_15__["MovieReviewComponent"]
+            _components_movie_review_movie_review_component__WEBPACK_IMPORTED_MODULE_15__["MovieReviewComponent"],
+            _components_user_register_user_register_component__WEBPACK_IMPORTED_MODULE_16__["UserRegisterComponent"],
+            _components_user_signin_user_signin_component__WEBPACK_IMPORTED_MODULE_17__["UserSigninComponent"]
         ],
         imports: [
             _angular_platform_browser__WEBPACK_IMPORTED_MODULE_1__["BrowserModule"],
@@ -437,7 +493,7 @@ AppModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
             ngx_toastr__WEBPACK_IMPORTED_MODULE_6__["ToastrModule"].forRoot(),
             _angular_common_http__WEBPACK_IMPORTED_MODULE_7__["HttpClientModule"]
         ],
-        providers: [_services_movie_service__WEBPACK_IMPORTED_MODULE_10__["MovieService"]],
+        providers: [_services_movie_service__WEBPACK_IMPORTED_MODULE_10__["MovieService"], _services_user_service__WEBPACK_IMPORTED_MODULE_18__["UserService"], ngx_cookie_service__WEBPACK_IMPORTED_MODULE_19__["CookieService"]],
         bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_8__["AppComponent"]]
     })
 ], AppModule);
@@ -847,6 +903,183 @@ MovieReviewComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
 
 /***/ }),
 
+/***/ "./src/app/components/user-register/user-register.component.scss":
+/*!***********************************************************************!*\
+  !*** ./src/app/components/user-register/user-register.component.scss ***!
+  \***********************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ("\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2NvbXBvbmVudHMvdXNlci1yZWdpc3Rlci91c2VyLXJlZ2lzdGVyLmNvbXBvbmVudC5zY3NzIn0= */");
+
+/***/ }),
+
+/***/ "./src/app/components/user-register/user-register.component.ts":
+/*!*********************************************************************!*\
+  !*** ./src/app/components/user-register/user-register.component.ts ***!
+  \*********************************************************************/
+/*! exports provided: UserRegisterComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "UserRegisterComponent", function() { return UserRegisterComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm2015/forms.js");
+/* harmony import */ var ngx_toastr__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ngx-toastr */ "./node_modules/ngx-toastr/fesm2015/ngx-toastr.js");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm2015/router.js");
+/* harmony import */ var src_app_services_user_service__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! src/app/services/user.service */ "./src/app/services/user.service.ts");
+
+
+
+
+
+
+let UserRegisterComponent = class UserRegisterComponent {
+    constructor(fb, toastr, router, userService) {
+        this.fb = fb;
+        this.toastr = toastr;
+        this.router = router;
+        this.userService = userService;
+    }
+    ngOnInit() {
+        this.userRegister = this.fb.group({
+            _id: [null],
+            firstName: [null, _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required],
+            lastName: [null, _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required],
+            email: [null, [_angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required, _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].pattern(/.+@.+\..+/)]],
+            username: [null, _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required],
+            password: [null, _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required],
+        });
+    }
+    submitForm(f) {
+        if (f.valid) {
+            const user = Object.assign({}, this.userRegister.value);
+            this.userService.register(user).subscribe(res => {
+                this.toastr.success("Successfully registered");
+                this.router.navigate(["/movies"]);
+            }, err => {
+                this.toastr.error("Unable to register user");
+            });
+        }
+    }
+    get firstName() { return this.userRegister.get('firstName'); }
+    get lastName() { return this.userRegister.get('lastName'); }
+    get email() { return this.userRegister.get('email'); }
+    get username() { return this.userRegister.get('username'); }
+    get password() { return this.userRegister.get('password'); }
+};
+UserRegisterComponent.ctorParameters = () => [
+    { type: _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormBuilder"] },
+    { type: ngx_toastr__WEBPACK_IMPORTED_MODULE_3__["ToastrService"] },
+    { type: _angular_router__WEBPACK_IMPORTED_MODULE_4__["Router"] },
+    { type: src_app_services_user_service__WEBPACK_IMPORTED_MODULE_5__["UserService"] }
+];
+UserRegisterComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+        selector: 'app-user-register',
+        template: tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! raw-loader!./user-register.component.html */ "./node_modules/raw-loader/dist/cjs.js!./src/app/components/user-register/user-register.component.html")).default,
+        styles: [tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! ./user-register.component.scss */ "./src/app/components/user-register/user-register.component.scss")).default]
+    })
+], UserRegisterComponent);
+
+
+
+/***/ }),
+
+/***/ "./src/app/components/user-signin/user-signin.component.scss":
+/*!*******************************************************************!*\
+  !*** ./src/app/components/user-signin/user-signin.component.scss ***!
+  \*******************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ("\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2NvbXBvbmVudHMvdXNlci1zaWduaW4vdXNlci1zaWduaW4uY29tcG9uZW50LnNjc3MifQ== */");
+
+/***/ }),
+
+/***/ "./src/app/components/user-signin/user-signin.component.ts":
+/*!*****************************************************************!*\
+  !*** ./src/app/components/user-signin/user-signin.component.ts ***!
+  \*****************************************************************/
+/*! exports provided: UserSigninComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "UserSigninComponent", function() { return UserSigninComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+/* harmony import */ var src_app_models_user__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! src/app/models/user */ "./src/app/models/user.ts");
+/* harmony import */ var src_app_services_user_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! src/app/services/user.service */ "./src/app/services/user.service.ts");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm2015/router.js");
+/* harmony import */ var ngx_toastr__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ngx-toastr */ "./node_modules/ngx-toastr/fesm2015/ngx-toastr.js");
+
+
+
+
+
+
+let UserSigninComponent = class UserSigninComponent {
+    constructor(userService, router, toastr) {
+        this.userService = userService;
+        this.router = router;
+        this.toastr = toastr;
+        this.user = new src_app_models_user__WEBPACK_IMPORTED_MODULE_2__["User"]();
+    }
+    ngOnInit() {
+    }
+    submitForm(f) {
+        if (f.valid) {
+            this.userService.signin(this.user).subscribe(res => {
+                this.toastr.success("Successfully signed in");
+                this.router.navigate(["/movies"]);
+            }, err => {
+                this.toastr.error("Unable to sign in");
+            });
+        }
+    }
+};
+UserSigninComponent.ctorParameters = () => [
+    { type: src_app_services_user_service__WEBPACK_IMPORTED_MODULE_3__["UserService"] },
+    { type: _angular_router__WEBPACK_IMPORTED_MODULE_4__["Router"] },
+    { type: ngx_toastr__WEBPACK_IMPORTED_MODULE_5__["ToastrService"] }
+];
+UserSigninComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+        selector: 'app-user-signin',
+        template: tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! raw-loader!./user-signin.component.html */ "./node_modules/raw-loader/dist/cjs.js!./src/app/components/user-signin/user-signin.component.html")).default,
+        styles: [tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! ./user-signin.component.scss */ "./src/app/components/user-signin/user-signin.component.scss")).default]
+    })
+], UserSigninComponent);
+
+
+
+/***/ }),
+
+/***/ "./src/app/models/user.ts":
+/*!********************************!*\
+  !*** ./src/app/models/user.ts ***!
+  \********************************/
+/*! exports provided: User */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "User", function() { return User; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+
+class User {
+}
+
+
+/***/ }),
+
 /***/ "./src/app/routes.ts":
 /*!***************************!*\
   !*** ./src/app/routes.ts ***!
@@ -861,17 +1094,68 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_movie_list_movie_list_component__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./components/movie-list/movie-list.component */ "./src/app/components/movie-list/movie-list.component.ts");
 /* harmony import */ var _components_movie_detail_movie_detail_component__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./components/movie-detail/movie-detail.component */ "./src/app/components/movie-detail/movie-detail.component.ts");
 /* harmony import */ var _components_movie_form_movie_form_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./components/movie-form/movie-form.component */ "./src/app/components/movie-form/movie-form.component.ts");
+/* harmony import */ var _components_user_register_user_register_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./components/user-register/user-register.component */ "./src/app/components/user-register/user-register.component.ts");
+/* harmony import */ var _components_user_signin_user_signin_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./components/user-signin/user-signin.component */ "./src/app/components/user-signin/user-signin.component.ts");
+/* harmony import */ var _services_auth_guard__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./services/auth.guard */ "./src/app/services/auth.guard.ts");
+
+
+
 
 
 
 
 const routes = [
     { path: 'movies', component: _components_movie_list_movie_list_component__WEBPACK_IMPORTED_MODULE_1__["MovieListComponent"] },
-    { path: 'movies/new', component: _components_movie_form_movie_form_component__WEBPACK_IMPORTED_MODULE_3__["MovieFormComponent"] },
+    { path: 'movies/new', component: _components_movie_form_movie_form_component__WEBPACK_IMPORTED_MODULE_3__["MovieFormComponent"], canActivate: [_services_auth_guard__WEBPACK_IMPORTED_MODULE_6__["AuthGuard"]] },
     { path: 'movies/:id', component: _components_movie_detail_movie_detail_component__WEBPACK_IMPORTED_MODULE_2__["MovieDetailComponent"] },
-    { path: 'movies/:id/edit', component: _components_movie_form_movie_form_component__WEBPACK_IMPORTED_MODULE_3__["MovieFormComponent"] },
+    { path: 'movies/:id/edit', component: _components_movie_form_movie_form_component__WEBPACK_IMPORTED_MODULE_3__["MovieFormComponent"], canActivate: [_services_auth_guard__WEBPACK_IMPORTED_MODULE_6__["AuthGuard"]] },
+    { path: 'register', component: _components_user_register_user_register_component__WEBPACK_IMPORTED_MODULE_4__["UserRegisterComponent"] },
+    { path: 'signin', component: _components_user_signin_user_signin_component__WEBPACK_IMPORTED_MODULE_5__["UserSigninComponent"] },
     { path: "", redirectTo: "movies", pathMatch: "full" }
 ];
+
+
+/***/ }),
+
+/***/ "./src/app/services/auth.guard.ts":
+/*!****************************************!*\
+  !*** ./src/app/services/auth.guard.ts ***!
+  \****************************************/
+/*! exports provided: AuthGuard */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AuthGuard", function() { return AuthGuard; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm2015/router.js");
+/* harmony import */ var _user_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./user.service */ "./src/app/services/user.service.ts");
+
+
+
+
+let AuthGuard = class AuthGuard {
+    constructor(router) {
+        this.router = router;
+    }
+    canActivate(route, state) {
+        if (_user_service__WEBPACK_IMPORTED_MODULE_3__["UserService"].isAuthenticated()) {
+            return true;
+        }
+        this.router.navigate(["/signin"]);
+        return false;
+    }
+};
+AuthGuard.ctorParameters = () => [
+    { type: _angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"] }
+];
+AuthGuard = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])({
+        providedIn: 'root'
+    })
+], AuthGuard);
+
 
 
 /***/ }),
@@ -949,6 +1233,71 @@ MovieService.ctorParameters = () => [
 MovieService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])()
 ], MovieService);
+
+
+
+/***/ }),
+
+/***/ "./src/app/services/user.service.ts":
+/*!******************************************!*\
+  !*** ./src/app/services/user.service.ts ***!
+  \******************************************/
+/*! exports provided: UserService */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "UserService", function() { return UserService; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm2015/http.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+/* harmony import */ var ngx_cookie_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ngx-cookie-service */ "./node_modules/ngx-cookie-service/fesm2015/ngx-cookie-service.js");
+/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! rxjs/operators */ "./node_modules/rxjs/_esm2015/operators/index.js");
+
+
+
+
+
+const httpHeaders = {
+    headers: new _angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpHeaders"]({
+        'Content-Type': 'application/json'
+    })
+};
+let UserService = class UserService {
+    constructor(http, cookieService) {
+        this.http = http;
+        this.cookieService = cookieService;
+    }
+    register(user) {
+        return this.http.post("/api/users/register", user, httpHeaders);
+    }
+    signin(user) {
+        let res = this.http.post("/api/users/signin", user, httpHeaders);
+        return res.pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["map"])(data => {
+            if (data["token"]) {
+                localStorage.setItem("token", data["token"]);
+                return true;
+            }
+            else {
+                return false;
+            }
+        }));
+    }
+    signout() {
+        this.cookieService.delete("token");
+        localStorage.removeItem("token");
+    }
+    static isAuthenticated() {
+        return localStorage.getItem("token") !== null;
+    }
+};
+UserService.ctorParameters = () => [
+    { type: _angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpClient"] },
+    { type: ngx_cookie_service__WEBPACK_IMPORTED_MODULE_3__["CookieService"] }
+];
+UserService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_2__["Injectable"])()
+], UserService);
 
 
 
@@ -1042,7 +1391,7 @@ Object(_angular_platform_browser_dynamic__WEBPACK_IMPORTED_MODULE_2__["platformB
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /Users/aalgahmi/Documents/classes/web3430/2020-01_spring/inclass/movies-fs/ng/src/main.ts */"./src/main.ts");
+module.exports = __webpack_require__(/*! /Users/aalgahmi/Documents/classes/web3430/vidoes/web3430-inclass-movies-fs/ng/src/main.ts */"./src/main.ts");
 
 
 /***/ })

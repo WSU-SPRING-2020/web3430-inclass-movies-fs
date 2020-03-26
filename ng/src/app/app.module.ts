@@ -13,7 +13,11 @@ import { MovieListItemComponent } from './components/movie-list-item/movie-list-
 import { routes } from './routes';
 import { MovieDetailComponent } from './components/movie-detail/movie-detail.component';
 import { MovieFormComponent } from './components/movie-form/movie-form.component';
-import { MovieReviewComponent } from './components/movie-review/movie-review.component'
+import { MovieReviewComponent } from './components/movie-review/movie-review.component';
+import { UserRegisterComponent } from './components/user-register/user-register.component';
+import { UserSigninComponent } from './components/user-signin/user-signin.component'
+import { UserService } from './services/user.service';
+import { CookieService } from 'ngx-cookie-service';
 
 @NgModule({
   declarations: [
@@ -22,7 +26,9 @@ import { MovieReviewComponent } from './components/movie-review/movie-review.com
     MovieListItemComponent,
     MovieDetailComponent,
     MovieFormComponent,
-    MovieReviewComponent
+    MovieReviewComponent,
+    UserRegisterComponent,
+    UserSigninComponent
   ],
   imports: [
     BrowserModule,
@@ -33,7 +39,7 @@ import { MovieReviewComponent } from './components/movie-review/movie-review.com
     ToastrModule.forRoot(),
     HttpClientModule
   ],
-  providers: [MovieService],
+  providers: [MovieService, UserService, CookieService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

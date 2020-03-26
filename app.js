@@ -29,6 +29,11 @@ app.use(sassMiddleware({
 app.use(express.static(path.join(__dirname, 'public')))
 app.use(express.static(path.join(__dirname, 'ng', 'build'), {extensions: ['js'], index: false}))
 
+// Authentication using passport
+import passport from 'passport'
+import {strategy} from './src/config/passport'
+passport.use(strategy)
+app.use(passport.initialize())
 
 // Routing
 import {configureRoutes } from './src/config/routes'

@@ -10,6 +10,11 @@
       <span aria-hidden="true"></span>
     </a>
   </div>
+  <div class="navbar-end">
+    <a *ngIf="signedIn" (click)="signout()" class="navbar-item">Sign out</a>
+    <a *ngIf="notSignedIn" routerLink="/register" class="navbar-item">Register</a>
+    <a *ngIf="notSignedIn" routerLink="/signin" class="navbar-item">Sign in</a>
+  </div>
 </nav>
 
 <router-outlet></router-outlet>
